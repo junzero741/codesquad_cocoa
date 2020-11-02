@@ -1,0 +1,31 @@
+vscode 공식 문서를 참조/번역함. <br>
+> https://code.visualstudio.com/docs/editor/debugging
+
+
+
+
+# breakpoints란
+breakpoint는 디버깅을 목적으로 프로그램의 실행을 잠시 멈추는(interrupt) 장소를 말한다. <br>
+디버깅 모드를 실행하면 breakpoint가 있는 곳에서 한 번씩 실행이 멈춘다. 
+
+> vscode에서 breakpoints는 다음 중 하나의 방법으로 ON/OFF 가 가능하다.
+
+* 키보드 F9
+* 에디터 왼쪽 마진 클릭 (빨간색 원으로 표시)
+
+
+# watch사용법
+watch 섹션은 변수와 표현식을 평가하고 관찰할 수 있는 곳이다.
+> Run view - WATCH 섹션 
+
+# call stack 의 의미
+
+자바스크립트가 끝내야 하는 함수들을 순서대로 리스트업 한 섹션. <br>
+함수가 호출되면, call stack에서 해당 함수는 사라진다. <br>
+
+# Step over / Step into/ Step out
+디버깅할 커맨드 라인을 이동하는 명령어.
+
+* Step over : 프로그램의 일반적인 실행 과정을 따라가기 
+* Step into : 해당 함수 내부로 들어가기
+* Step out : 함수를 실행하고 호출된 곳으로 돌아가기
