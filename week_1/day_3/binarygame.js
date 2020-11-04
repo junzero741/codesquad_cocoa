@@ -1,12 +1,8 @@
-
-
-
-
-function solution(radix, digit, peopleNum) {
+function solution(radix, digit, peopleNum, p) {
   
     let numberStackArr = [];
-    let playerA = [];
-    let playerB = [];
+    let gildong = [];
+   
     
     
         for(let i = 0; i.toString([radix]).length < digit; i++ ){
@@ -21,21 +17,15 @@ function solution(radix, digit, peopleNum) {
                gameConsole.splice(i,1);
             }
         }
-        // console.log(gameConsole);
 
-        let numOfTurn = gameConsole.length / peopleNum; // 미리 구할 숫자의 개수 
         
-        for(let i = 0; i < gameConsole.length; i++) {
-            if((i + 2) % peopleNum === 0) {
-                playerA.push(gameConsole[i]);
-            } else {
-                playerB.push(gameConsole[i]);
-            }
-            
+        for(let i = p-1; i < gameConsole.length; i+= peopleNum) {
+           
+                gildong.push(gameConsole[i]);
+    
         }
+        
+        console.log(gildong); //틀렸음
+    } 
 
-   console.log(playerB);
-}
-
-solution(16,3,10);
-
+    solution(2,4,2,2);
