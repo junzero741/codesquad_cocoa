@@ -34,8 +34,8 @@ function solution(radix, digit, peopleNum) {
             
         }
 
-   
+   console.log(playerB);
 }
 
-solution(2,4,2);
+solution(16,3,10);
 
