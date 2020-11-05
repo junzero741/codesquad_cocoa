@@ -1,4 +1,4 @@
-function solution(radix, digit, peopleNum, p) {
+function solution(radix, digit, peopleNum, turn) {
   
     let numberStackArr = [];
     let gildong = [];
@@ -19,13 +19,14 @@ function solution(radix, digit, peopleNum, p) {
         }
 
         
-        for(let i = p-1; i < gameConsole.length; i+= peopleNum) {
+        for(let i = turn-1; i < gameConsole.length; i+= peopleNum) {
            
                 gildong.push(gameConsole[i]);
     
         }
         
-        console.log(gildong); //틀렸음
+        console.log(gildong); 
     } 
 
-    solution(2,4,2,2);
+ 
+    solution(2,4,3,1);
