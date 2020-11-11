@@ -14,6 +14,7 @@
 const data_1 = "[1,2,[3,4,[5,[6]]]]";   //괄호 수가 일치할 경우
 const data_2 = "[1,2,[3,4,[5,[6]]";     //여는괄호가 더 많은경우
 const data_3 = "[1,2,3,4,5,[6]]]";      //닫는괄호가 더 많은경우
+const data_4 = "[1,13,12,42,[,[,5]]]"   //두자리수가 원소인 경우
 
 class Linter {
     constructor() {
@@ -38,9 +39,9 @@ class Linter {
     }
 
 
-      // 주어진 데이터(스트링)의 원소 개수 리턴 (bracket 제외)
-      elementNum(data) {
-        let elemCount  = data.length - (this.openBracketCount * 2);
+    // 주어진 데이터(스트링)의 원소 개수 리턴 (bracket 제외)
+    elementNum(data) {
+        let elemCount = data.length - (this.openBracketCount * 2);
         return elemCount;
     }
 
@@ -63,7 +64,7 @@ class Linter {
         for (let i = 0; i < data.length; i++) {
             if (data[i] === "]") {
                 this.stack.pop()
-                this.bracketCount--; 
+                this.bracketCount--;
             }
         }
 
@@ -93,12 +94,12 @@ class Linter {
         if (this.isStackEmpty(data) === true) {
             console.log("깊이 수준은 " + this.openBracketCount + ", 원소 개수는 " + this.elementNum(data) + "입니다.");
         } else {
-            if(this.bracketCount > 0) {
+            if (this.bracketCount > 0) {
                 console.log("여는 괄호가 더 많습니다.");
-            } else if(this.bracketCount < 0) {
+            } else if (this.bracketCount < 0) {
                 console.log("닫는 괄호가 더 많습니다.");
             }
-            
+
         }
     }
 
@@ -108,7 +109,7 @@ class Linter {
 
         this.openBracketCheck(dataArr);
         this.printAnswer(dataArr);
-        
+
         // 테스트 다양화를 위해 초기화
         this.openBracketCount = 0;
         this.bracketCount = 0;
@@ -121,3 +122,4 @@ let test = new Linter;
 test.run(data_1);
 test.run(data_2);
 test.run(data_3);
+test.run(data_4);
