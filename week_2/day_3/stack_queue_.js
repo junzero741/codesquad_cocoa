@@ -23,6 +23,7 @@ class Linter {
     }
 
 
+
     // 주어진 데이터(스트링)을 콤마없는 배열 객체로 리턴
     dataToArray(data) {
         let dataArr = Array.from(data);
@@ -36,6 +37,12 @@ class Linter {
         return dataArr;
     }
 
+
+      // 주어진 데이터(스트링)의 원소 개수 리턴 (bracket 제외)
+      elementNum(data) {
+        let elemCount  = data.length - (this.openBracketCount * 2);
+        return elemCount;
+    }
 
     // 주어진 배열의 원소중에 "[" 가 있는지 검사하여 stack 배열에 해당 원소 푸시
     openBracketCheck(data) {
@@ -84,7 +91,7 @@ class Linter {
 
 
         if (this.isStackEmpty(data) === true) {
-            console.log("깊이 수준은 " + this.openBracketCount + "입니다.");
+            console.log("깊이 수준은 " + this.openBracketCount + ", 원소 개수는 " + this.elementNum(data) + "입니다.");
         } else {
             if(this.bracketCount > 0) {
                 console.log("여는 괄호가 더 많습니다.");
@@ -102,7 +109,10 @@ class Linter {
         this.openBracketCheck(dataArr);
         this.printAnswer(dataArr);
         
-
+        // 테스트 다양화를 위해 초기화
+        this.openBracketCount = 0;
+        this.bracketCount = 0;
+        this.stack = [];
     }
 }
 
