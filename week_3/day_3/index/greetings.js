@@ -1,3 +1,9 @@
+// input에 텍스트 입력하면
+// Welcome, 텍스트 라고 출력된다.  (여기까지 완)
+// 이제 위에 input이 사라지게 해야한다.
+// 그리고 currentUser에 Value가 남아있으므로
+// 새로고침해도 계속 Welcome, 텍스트 가 남아있게 한다.
+
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
     welcomeText = document.querySelector("h4");
