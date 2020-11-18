@@ -6,7 +6,7 @@
 
 const form = document.querySelector(".js-form"),
     input = form.querySelector("input"),
-    welcomeText = document.querySelector("h4");
+    welcomeText = document.querySelector(".js-welcome");
 
 
 const currentUser = "currentUser",
