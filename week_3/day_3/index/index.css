@@ -1,0 +1,9 @@
+.welcome,
+.form {
+    display: none;
+}
+
+
+.showing {
+    display : block;
+}
