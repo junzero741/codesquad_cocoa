@@ -7,3 +7,9 @@
 .showing {
     display : block;
 }
+
+
+.checked {
+    text-decoration: line-through;
+    opacity: 50%;
+}
