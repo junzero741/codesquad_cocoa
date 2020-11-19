@@ -11,7 +11,8 @@ function getTime() {
 
 
 function init() {
-    setInterval(getTime, 1000);
+    const BY_SECOND = 1000;
+    setInterval(getTime, BY_SECOND);
 }
 
 init();
