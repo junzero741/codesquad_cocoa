@@ -1,7 +1,7 @@
-.welcome,
+/* .welcome,
 .form {
     display: none;
-}
+} */
 
 
 .showing {
@@ -11,5 +11,5 @@
 
 .checked {
     text-decoration: line-through;
-    opacity: 50%;
+
 }
