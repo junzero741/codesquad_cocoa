@@ -1,40 +1,75 @@
-const listTitle = document.querySelector(".listTitle"),
-    mainList = document.querySelector(".list");
-   
+const title = document.querySelector(".dropdown"),
+    mainList = document.querySelector(".dropdown-content"),
+    dropMain = document.querySelector(".dropdown-main");
+
+let timeout;
+const HIDE = "hiding"
 
 
-function handleEvent () {
 
+dropMain.addEventListener("mouseenter", () => {
+    timeout = setTimeout(renderList, 1000);
+});
+
+dropMain.addEventListener("mouseout", () => {
+    clearTimeout(timeout);
+    hideList();
+});
+
+
+function renderList () {
+    mainList.classList.remove(HIDE);
+    mainList.addEventListener("mousemove" )
+}
+
+function hideList() {
+    mainList.classList.add(HIDE);
 }
 
 
-listTitle.appendChild(mainList);
-listTitle.addEventListener("mouseover", renderList);
 
 
-// function consoleTest() {
-//     const SECOND = 1000;
-//     setTimeout(function () {
-//         console.log("wow");
-//     }, SECOND);
-// }
 
 
-function renderList() {
-    const SECOND = 1000;
-    setTimeout(function () {
-        mainList.classList.remove("hiding");
-        console.log("마우스가 주황색 위에서 노는중");
-    }, SECOND);
-   
 
-   
-    
- 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// title.appendChild(mainList);
+// title.addEventListener("mouseover", renderList);
+// title.addEventListener("mouuseout", hideList);
+
+
+// var myVar;
 
 
 // function hideList() {
 //     mainList.classList.add("hiding");
+//     clearTimeout(myVar);
 // }
+
+
+// function renderList() {
+//     const SECOND = 1000;
+
+//     myVar = setTimeout(function () {
+//         mainList.classList.add("showing");
+//     }, SECOND);
+
+// }
+
+
 
