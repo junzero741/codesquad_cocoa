@@ -1,39 +1,40 @@
 const title = document.querySelector(".dropdown"),
-    mainList = document.querySelector(".dropdown-content"),
-    dropMain = document.querySelector(".dropdown-main");
+    mainList = document.querySelector(".dropdown-content");
 
-let timeout;
-const HIDE = "hiding"
+    const HIDE = "hiding"
+   
 
+function handleEvent() {
+    let timeout; 
 
-
-dropMain.addEventListener("mouseenter", () => {
-    timeout = setTimeout(renderList, 1000);
-});
-
-dropMain.addEventListener("mouseout", () => {
-    clearTimeout(timeout);
-    hideList();
-});
+    title.addEventListener("mouseenter", () => {
+        timeout = setTimeout(renderList, 1000);
+    });
+    title.addEventListener("mouseleave", () => {
+        clearTimeout(timeout);
+        hideList();
+    });
+    
+    mainList.addEventListener("mouseenter", renderList);
+    mainList.addEventListener("mouseleave", hideList);
+}
 
 
 function renderList () {
+    
     mainList.classList.remove(HIDE);
-    mainList.addEventListener("mousemove" )
 }
-
 function hideList() {
     mainList.classList.add(HIDE);
 }
 
 
+function init () {
+    handleEvent();
+}
 
 
-
-
-
-
-
+init();
 
 
 
