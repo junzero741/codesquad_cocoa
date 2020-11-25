@@ -10,3 +10,11 @@
 h1 {
     margin-left : 330px;
 }
+
+
+.town {
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 700px;
+    max-height: 700px;
+}
