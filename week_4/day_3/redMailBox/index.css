@@ -1,0 +1,12 @@
+.map {
+    width: 50rem;
+    height: 50rem;
+    border: 2px solid black;
+    display: inline-block;
+    position: relative;
+}
+
+
+h1 {
+    margin-left : 330px;
+}
