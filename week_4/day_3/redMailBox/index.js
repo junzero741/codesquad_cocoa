@@ -1,11 +1,22 @@
 const map = document.querySelector(".map");
-
+let randomNum;
 
 function createTown() {
     const town = document.createElement("div");
     town.className = "town";
+    renderMailbox(town);
     map.appendChild(town);
     setTownFeature(town);
+}
+
+
+function renderMailbox(town) {
+    randomNum = Math.random() * 100;
+    if (randomNum < 50) {
+        town.innerText = "📮";
+    } else {
+        town.innerText = "";
+    }
 }
 
 
@@ -15,11 +26,11 @@ function setTownFeature(town) {
     town.style.left = `${getRandomNum("pos")}px`;
     town.style.width = `${getRandomNum("size")}px`;
     town.style.height = `${getRandomNum("size")}px`;
+
 }
 
 
 function getRandomNum(type) {
-    let randomNum;
     const MAXPOS = 400;
     const MINPOS = 0;
     const MAXSIZE = 400;
@@ -41,11 +52,16 @@ function getNumOfTowns() {
     return randomNum;
 }
 
-function init() {
+
+function renderTowns() {
     const numOfTowns = getNumOfTowns();
     for (let i = 0; i < numOfTowns; i++) {
         window.onload = createTown();
     }
+}
+
+function init() {
+    renderTowns();
 }
 
 init();
