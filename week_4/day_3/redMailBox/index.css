@@ -15,6 +15,7 @@ h1 {
 .town {
     min-width: 30px;
     min-height: 30px;
-    max-width: 700px;
-    max-height: 700px;
+    max-width: 400px;
+    max-height: 400px;
+    border : 2px solid black;
 }
