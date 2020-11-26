@@ -29,9 +29,6 @@ h1 {
 
 
 .button {
-    background-color: rgb(247, 33, 26);
-    border : none;
-    color: white;
     position: relative;
     top: -790px;
 }
