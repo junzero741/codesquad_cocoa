@@ -17,5 +17,16 @@ h1 {
     min-height: 30px;
     max-width: 400px;
     max-height: 400px;
-    border : 2px solid black;
+    border : 3px solid rgba(37, 148, 221, 0.781);
+    text-align: center;
+    
+}
+
+
+.button {
+    background-color: rgb(247, 33, 26);
+    border : none;
+    color: white;
+    position: relative;
+    top: -790px;
 }
