@@ -9,11 +9,10 @@
 //                      특별지역이면 해당 이펙트 당하기 /
 //                      황금열쇠면 황금열쇠 이펙트 실행하기 /
 //                      )
-
-
+const diceButton = document.getElementById('diceButton');
+const diceResult = document.querySelector(".diceResult");
 
 // 플레이어 생성자 함수
-
 function Player(name, money, position) {
     this.name = name;
     this.money = money;
@@ -37,8 +36,8 @@ function randomizeTurn() {
 
 // 주사위 던지기 (1등부터 순서대로)
 function rollDice() {
-    let firstDice = Math.floor( ( Math.random() * (6 - 1) + 1 ));
-    let secondDice = Math.floor( ( Math.random() * (6 - 1) + 1 ));
+    let firstDice = Math.floor( ( Math.random() * (4 - 1) + 1 ));
+    let secondDice = Math.floor( ( Math.random() * (4 - 1) + 1 ));
    
 
     if(firstDice === secondDice) {
@@ -52,6 +51,24 @@ function rollDice() {
 }
 
 
+function handleEvent() {
+    diceButton.addEventListener("click", showDiceResult);
+}
+
+
+// function testFunction() {
+//     console.log("주사위가 던져졌습니다.");
+// }
+
+function showDiceResult() {
+    const result = rollDice();
+
+
+        diceResult.innerText = result;
+    
+    console.log("주사위 결과는" + result);
+}
+
 
 // 플레이어 이동하기 (주사위 던진 플레이어)
 function movePlayer(player) {
@@ -61,8 +78,13 @@ function movePlayer(player) {
 
 function init() {
     randomizeTurn();
+    handleEvent();
     // 버튼(주사위) 이벤트
 
     
     //  버튼누를 때 마다 / players 배열의 순서대로 / movePlayer(player) 함수 실행
 }
+
+
+
+window.onload = init();
