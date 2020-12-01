@@ -71,12 +71,18 @@ function showDiceResult() {
 function movePlayer() {
     if (turn >= 0 && turn < 4) {
         players[turn].position += showDiceResult();
+        initPos();
         turn++;
     } else {
         turn = 0;
     }  
+}
 
-    // 실제 UI 상으로 장기말을 움직이는 함수 추가할 것
+// 플레이어 position 이 19보다 커지면 0으로 초기화 (보드판이 20칸이므로)
+function initPos() {
+    if(players[turn].position > 19) {
+        players[turn].position -= 20;
+    }
 }
 
 
