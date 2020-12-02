@@ -22,21 +22,21 @@ function Player(name, money, position) {
     this.position = position;
 }
 
-
+// 플레이어 정보 담긴 변수, 배열 선언
 const player_1 = new Player("goody", 5000000, 0);
 const player_2 = new Player("autumn", 5000000, 0);
 const player_3 = new Player("beemo", 5000000, 0);
 const player_4 = new Player("dico", 5000000, 0);
 const players = [player_1, player_2, player_3, player_4];
 
-
+// 플레이어 순서 랜덤화
 function randomizeTurn() {
     players.sort(function () {
         return Math.random() - Math.random();
     });
 }
 
-
+// 2개의 주사위 굴리기
 function rollDice() {
     let firstDice = Math.floor((Math.random() * (4 - 1) + 1));
     let secondDice = Math.floor((Math.random() * (4 - 1) + 1));
@@ -51,15 +51,14 @@ function rollDice() {
     }
 }
 
-
+// 이벤트 모은 함수
 function handleEvent() {
     diceButton.addEventListener("click", movePlayer);
     diceButton.addEventListener("click", paintStatus);
 }
 
-
+// 주사위를 던질 차례가 오면 coral 색으로 status 창 색칠
 function paintStatus() {
-
     if(turn >= 4) {
         turn = 0;
     }
@@ -70,7 +69,7 @@ function paintStatus() {
     }
 }
 
-
+// 주사위 결과 값을 화면에 출력
 function showDiceResult() {
     const result = rollDice();
     diceResult.innerText = result;
@@ -79,7 +78,7 @@ function showDiceResult() {
     return result;
 }
 
-
+// 주사위 결과 값만큼 플레이어 이동(데이터만)
 function movePlayer() {
     if (turn >= 0 && turn < 4) {
         players[turn].position += showDiceResult();
@@ -90,13 +89,11 @@ function movePlayer() {
     } else {
         turn = 0;
         paintStatus();
-        movePlayer();
-        
+        movePlayer();   
     }
-
 }
 
-
+// 플레이어 순서가 랜덤으로 결정되면 각 플레이어 상태창 화면에 출력
 function updateStatus() {
     const animalArr = ["🐱", "🐼", "🦊", "🐵"];
 
@@ -105,30 +102,27 @@ function updateStatus() {
     }
 }
 
-
+// 플레이어가 한 바퀴를 돌면 원점으로 돌아오는 함수 (데이터만)
 function initPos() {
     if (players[turn].position > 19) {
         players[turn].position -= 20;
     }
 }
 
-
+// 플레이어의 장기말을 실제로 움직이는 함수
 function movePlayerHorse() {
     if (turn === 0) {
         player_1_Horse.style.left = cities[players[turn].position].offsetLeft + "px";
         player_1_Horse.style.top = cities[players[turn].position].offsetTop + "px";
     }
-
     if (turn === 1) {
         player_2_Horse.style.left = cities[players[turn].position].offsetLeft + 20 + "px";
         player_2_Horse.style.top = cities[players[turn].position].offsetTop + "px";
     }
-
     if (turn === 2) {
         player_3_Horse.style.left = cities[players[turn].position].offsetLeft + 30 + "px";
         player_3_Horse.style.top = cities[players[turn].position].offsetTop + "px";
     }
-
     if (turn === 3) {
         player_4_Horse.style.left = cities[players[turn].position].offsetLeft + 40 + "px";
         player_4_Horse.style.top = cities[players[turn].position].offsetTop + "px";
@@ -148,7 +142,7 @@ window.onload = init();
 
 
 
-/*-------------------------------도시들 변수 선언------------------------------*/
+/*-------------------------------도시 변수 선언------------------------------*/
 const start = document.getElementById("start"),
     taipei = document.getElementById("taipei"),
     hongkong = document.getElementById("hongkong"),
