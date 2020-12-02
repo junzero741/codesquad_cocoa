@@ -1,5 +1,6 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 
@@ -43,6 +44,8 @@ canvas {
 .player_1 {
     position: absolute;
     left : 1050px;
+    font-size : 30px;
+    margin-top: 10px;
     border : 1px solid black;
     padding-top : 50px;
     padding-bottom: 50px;
@@ -52,6 +55,7 @@ canvas {
 .player_2 {
     position: absolute;
     left : 1050px;
+    font-size : 30px;
     top : 150px;
     border : 1px solid black;
     padding-top : 50px;
@@ -62,6 +66,7 @@ canvas {
 .player_3 {
     position: absolute;
     left : 1050px;
+    font-size : 30px;
     top : 300px;
     border : 1px solid black;
     padding-top : 50px;
@@ -72,6 +77,7 @@ canvas {
 .player_4 {
     position: absolute;
     left : 1050px;
+    font-size : 30px;
     top: 450px;
     border : 1px solid black;
     padding-top : 50px;
@@ -79,6 +85,38 @@ canvas {
     padding-right : 400px;
 }
 
+
+
+#player_1_horse {
+    font-size : 30px;
+    position: absolute;
+    left : 880px;
+    top: 790px;
+}
+
+
+#player_2_horse {
+    font-size : 30px;
+    position: absolute;
+    left : 900px;
+    top: 790px;
+}
+
+
+#player_3_horse {
+    font-size : 30px;
+    position: absolute;
+    left : 920px;
+    top: 790px;
+}
+
+
+#player_4_horse {
+    font-size : 30px;
+    position: absolute;
+    left : 940px;
+    top: 790px;
+}
 
 
 /*도시 위치잡기  (옆, 위로 각각 150px 씩 차이두면 된다.*/
@@ -134,8 +172,9 @@ canvas {
 }
 
 #getSocialWelfareFund {
-    left : 100px;
+    left : 130px;
     top : 40px;
+    font-size : 18px;
 }
 
 #sydney {
@@ -159,8 +198,9 @@ canvas {
 }
 
 #spaceStation {
-    left : 860px;
+    left : 880px;
     top: 40px;
+    font-size : 20px;
 }
 
 #roma {
@@ -179,6 +219,7 @@ canvas {
 }
 
 #paySocialWelfareFund {
-    left : 850px;
+    left : 890px;
     top: 640px;
+    font-size : 18px;
 }
